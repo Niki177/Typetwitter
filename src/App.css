@@ -1,5 +1,76 @@
 /* App.css */
-body {
+
+/* General reset */
+* {
   margin: 0;
-  font-family: sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #0f1419;
+  line-height: 1.5;
+}
+
+/* Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  padding: 16px;
+  border-bottom: 1px solid #e6ecf0;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Main editor area */
+.editor {
+  flex: 1;
+  padding: 24px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  color: inherit;
+}
+
+/* Footer toggle area */
+.footer {
+  padding: 12px 16px;
+  font-size: 14px;
+  border-top: 1px solid #e6ecf0;
+  background-color: #fafafa;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Animation for appearance */
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
 }
